@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { throwError } from "../utils/helpers.js";
-import { Product } from "./../models/product.model.js";
+import { throwError } from "../utils/helpers";
+import { Product } from "./../models/product.model";
 
 export const getProducts = async (
   req: Request,

@@ -1,5 +1,5 @@
-import { models, Schema, model, Model } from "mongoose";
-import { Category, IProduct } from "../types/type.js";
+import mongoose, { Schema, model, Model } from "mongoose";
+import { Category, IProduct } from "../types/type";
 
 const ProductSchema = new Schema<IProduct>(
   {
@@ -37,4 +37,4 @@ const ProductSchema = new Schema<IProduct>(
 );
 
 export const Product: Model<IProduct> =
-  models.Product || model<IProduct>("Product", ProductSchema);
+  mongoose.models.Product || model<IProduct>("Product", ProductSchema);

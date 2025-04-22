@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "rimraf dist && npx tsc",
-    "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\""
+    "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index\""
   },
   "keywords": [],
   "author": "",
