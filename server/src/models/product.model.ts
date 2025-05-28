@@ -33,7 +33,7 @@ const ProductSchema = new Schema<IProduct>(
       min: 0,
     },
   },
-  { timestamps: true }
+  { timestamps: true, versionKey: false }
 );
 
 export const Product: Model<IProduct> =

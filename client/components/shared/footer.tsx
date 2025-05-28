@@ -7,7 +7,7 @@ export default function SiteFooter() {
         <p className="text-center text-sm text-muted-foreground">
           Made with ❤ by{" "}
           <Link
-            href="https://www.danish-siddiqui.vercel.app"
+            href="https://danish-siddiqui.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline underline-offset-4 hover:text-primary"
