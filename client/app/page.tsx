@@ -1,14 +1,28 @@
 "use client";
 import ProductCard from "@/components/shared/product-card";
-import { sampleProducts } from "@/lib/data";
 import { Product } from "@/lib/types";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
+import axios from "axios";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
 
+  const getProducts = async () => {
+    try {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/products/all`
+      );
+      if (!data.success) {
+        return toast.error(data.message || "Failed to fetch products");
+      }
+      setProducts(data.data);
+    } catch (err) {
+      toast.error("Failed to fetch products");
+    }
+  };
   useEffect(() => {
-    setProducts(sampleProducts);
+    getProducts();
   }, []);
   return (
     <div className="container mx-auto flex-1 py-10 px-4">
